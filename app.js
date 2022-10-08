@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 const details = require("./details.json");
 
 const app = express();
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://of-form.netlify.app" }));
 app.use(bodyParser.json());
 
 app.listen(3000, () => {
@@ -32,7 +32,7 @@ async function sendMail(user, callback) {
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    
+
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
